@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenyx-Project.WebForms", "Fenyx-Project.WebForms\Fenyx-Project.WebForms.csproj", "{9BABED29-90D3-46DE-B008-A6C51224FADA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenyx-Project.WebService", "Fenyx-Project.WebService\Fenyx-Project.WebService.csproj", "{00A4FE5F-6813-4AA5-8379-3C2E306A3C8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9BABED29-90D3-46DE-B008-A6C51224FADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BABED29-90D3-46DE-B008-A6C51224FADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BABED29-90D3-46DE-B008-A6C51224FADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00A4FE5F-6813-4AA5-8379-3C2E306A3C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A4FE5F-6813-4AA5-8379-3C2E306A3C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A4FE5F-6813-4AA5-8379-3C2E306A3C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A4FE5F-6813-4AA5-8379-3C2E306A3C8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
