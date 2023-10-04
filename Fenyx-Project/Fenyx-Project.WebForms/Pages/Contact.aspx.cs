@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Fenyx_Project.WebForms
+namespace Fenyx_Project.WebForms.Pages
 {
     public partial class Contact : Page
     {

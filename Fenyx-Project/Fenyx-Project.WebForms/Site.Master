@@ -47,13 +47,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Nom de l'application</a>
+                    <a class="navbar-brand" runat="server" href="~/Pages/">Application Fenyx-Project</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Accueil</a></li>
-                        <li><a runat="server" href="~/About">À propos de</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/Pages/">Accueil</a></li>
+                        <li><a runat="server" href="~/Pages/About">À propos de</a></li>
+                        <li><a runat="server" href="~/Pages/Contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mon ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Application Fenyx-Project</p>
             </footer>
         </div>
 
