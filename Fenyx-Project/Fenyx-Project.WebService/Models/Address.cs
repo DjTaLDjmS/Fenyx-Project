@@ -13,7 +13,7 @@ namespace Fenyx_Project.WebService.Models
         [ForeignKey("User")]
         [Column("Id")]
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid Id { get; set; }
         [Column("Street")]
         public string Street { get; set; }
