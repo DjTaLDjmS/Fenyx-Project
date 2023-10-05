@@ -9,114 +9,124 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <table>
-                    <tr>
-                        <th>Prénom</th>
-                        <td>
-                            <asp:TextBox ID="txtFirstName" runat="server" />
-                        </td>
-                        <td>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorFirstName" runat="server"
-                                ControlToValidate="txtFirstName" Text="* Requis" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Nom</th>
-                        <td>
-                            <asp:TextBox ID="txtLastName" runat="server" />
-                        </td>
-                        <td>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorLastName" runat="server"
-                                ControlToValidate="txtLastName" Text="* Requis" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Date de naissance</th>
-                        <td>
-                            <asp:TextBox ID="txtBirthdate" runat="server" />
-                        </td>
-                        <td>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorBirthdate" runat="server"
-                                ControlToValidate="txtBirthdate" Text="* Requis" />
-                        </td>
-                        <td>
-                            <asp:CompareValidator runat="server" ID="cvDate"
-                                ErrorMessage="Date requise" Operator="DataTypeCheck"
-                                ControlToValidate="txtBirthdate" Type="Date" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Url Photo</th>
-                        <td>
-                            <asp:TextBox ID="txtPhoto" runat="server" />
-                        </td>
-                        <td>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorPhoto" runat="server"
-                                ControlToValidate="txtPhoto" Text="* Requis" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Adresse</th>
-                        <td>
-                            <asp:TextBox ID="txtStreet" runat="server" />
-                        </td>
-                        <td>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorStreet" runat="server"
-                                ControlToValidate="txtStreet" Text="* Requis" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Code postal</th>
-                        <td>
-                            <asp:TextBox ID="txtZipcode" runat="server" />
-                        </td>
-                        <td>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorZipcode" runat="server"
-                                ControlToValidate="txtZipcode" Text="* Requis" />
-                        </td>
-                        <td>
-                            <asp:CompareValidator ID="cvInt" runat="server" ControlToValidate="txtZipcode"
-                                Type="Integer" Operator="DataTypeCheck" ErrorMessage="Nombre  requis" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Ville</th>
-                        <td>
-                            <asp:TextBox ID="txtCity" runat="server" />
-                        </td>
-                        <td>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorCity" runat="server"
-                                ControlToValidate="txtCity" Text="* Requis" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Button ID="BtnReset" Text="Effacer"
-                                OnClick="BtnReset_Click" runat="server" CausesValidation="False" />
+                <asp:UpdatePanel ID="UpdatePanelForm" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <asp:Label ID="lblMessage" runat="server" EnableViewState="false" ForeColor="blue"></asp:Label>
+                        <table>
+                            <tr>
+                                <th>Prénom</th>
+                                <td>
+                                    <asp:TextBox ID="txtFirstName" runat="server" />
+                                </td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorFirstName" runat="server"
+                                        ControlToValidate="txtFirstName" Text="* Requis" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Nom</th>
+                                <td>
+                                    <asp:TextBox ID="txtLastName" runat="server" />
+                                </td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorLastName" runat="server"
+                                        ControlToValidate="txtLastName" Text="* Requis" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Date de naissance</th>
+                                <td>
+                                    <asp:TextBox ID="txtBirthdate" runat="server" />
+                                </td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorBirthdate" runat="server"
+                                        ControlToValidate="txtBirthdate" Text="* Requis" />
+                                </td>
+                                <td>
+                                    <asp:CompareValidator runat="server" ID="cvDate"
+                                        ErrorMessage="Date requise" Operator="DataTypeCheck"
+                                        ControlToValidate="txtBirthdate" Type="Date" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Url Photo</th>
+                                <td>
+                                    <asp:TextBox ID="txtPhoto" runat="server" />
+                                </td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorPhoto" runat="server"
+                                        ControlToValidate="txtPhoto" Text="* Requis" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Adresse</th>
+                                <td>
+                                    <asp:TextBox ID="txtStreet" runat="server" />
+                                </td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorStreet" runat="server"
+                                        ControlToValidate="txtStreet" Text="* Requis" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Code postal</th>
+                                <td>
+                                    <asp:TextBox ID="txtZipcode" runat="server" />
+                                </td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorZipcode" runat="server"
+                                        ControlToValidate="txtZipcode" Text="* Requis" />
+                                </td>
+                                <td>
+                                    <asp:CompareValidator ID="cvInt" runat="server" ControlToValidate="txtZipcode"
+                                        Type="Integer" Operator="DataTypeCheck" ErrorMessage="Nombre  requis" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Ville</th>
+                                <td>
+                                    <asp:TextBox ID="txtCity" runat="server" />
+                                </td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorCity" runat="server"
+                                        ControlToValidate="txtCity" Text="* Requis" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button ID="BtnReset" Text="Effacer"
+                                        OnClick="BtnReset_Click" runat="server" CausesValidation="False" />
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Button ID="BtnAddUser" Text="Ajouter"
-                                OnClick="BtnAddUser_Click" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button ID="BtnAddUser" Text="Ajouter"
+                                        OnClick="BtnAddUser_Click" runat="server" />
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Button ID="BtnUpdateUser" Text="Modifier"
-                                OnClick="BtnUpdateUser_Click" runat="server" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Button ID="BtnDeleteUser" Text="Supprimer"
-                                OnClick="BtnDeleteUser_Click" runat="server" CausesValidation="False" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button ID="BtnUpdateUser" Text="Modifier"
+                                        OnClick="BtnUpdateUser_Click" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button ID="BtnDeleteUser" Text="Supprimer"
+                                        OnClick="BtnDeleteUser_Click" runat="server" CausesValidation="False" />
 
-                        </td>
-                    </tr>
-                </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:UpdateProgress ID="Up1" runat="Server" AssociatedUpdatePanelID="UpdatePanelForm">
+                    <ProgressTemplate>
+                        <span style="background-color: #66997A;">Veuillez patienter ...</span>
+                    </ProgressTemplate>
+                </asp:UpdateProgress>
             </div>
             <div class="col-md-6">
                 <asp:GridView ID="GridViewUsers" runat="server" CellSpacing="3"

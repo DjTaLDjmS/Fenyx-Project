@@ -15,6 +15,24 @@ namespace Fenyx_Project.WebForms.Pages
     {
 
         /// <summary>
+        /// Contrôle UpdatePanelForm.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelForm;
+
+        /// <summary>
+        /// Contrôle lblMessage.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
         /// Contrôle txtFirstName.
         /// </summary>
         /// <remarks>
@@ -193,6 +211,15 @@ namespace Fenyx_Project.WebForms.Pages
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnDeleteUser;
+
+        /// <summary>
+        /// Contrôle Up1.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress Up1;
 
         /// <summary>
         /// Contrôle GridViewUsers.

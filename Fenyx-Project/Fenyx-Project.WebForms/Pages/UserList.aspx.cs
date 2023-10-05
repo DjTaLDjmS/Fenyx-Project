@@ -45,6 +45,8 @@ namespace Fenyx_Project.WebForms.Pages
                     txtZipcode.Text = user.AddressZipcode.ToString();
                     txtCity.Text = user.AddressCity;
                 }
+
+                lblMessage.Text = "Données chargées";
             }
         }
 
@@ -65,6 +67,8 @@ namespace Fenyx_Project.WebForms.Pages
             PopulateList();
 
             ResetTextBoxes();
+
+            lblMessage.Text = "Utilisateur ajouté";
         }
 
         protected void BtnUpdateUser_Click(object sender, EventArgs e)
@@ -87,6 +91,8 @@ namespace Fenyx_Project.WebForms.Pages
                 PopulateList();
 
                 ResetTextBoxes();
+
+                lblMessage.Text = "Utilisateur modifié";
             }
         }
 
@@ -101,6 +107,8 @@ namespace Fenyx_Project.WebForms.Pages
                 PopulateList();
 
                 ResetTextBoxes();
+
+                lblMessage.Text = "Utilisateur supprimé";
             }
         }
 
@@ -113,6 +121,8 @@ namespace Fenyx_Project.WebForms.Pages
             txtStreet.Text = String.Empty;
             txtZipcode.Text = String.Empty;
             txtCity.Text = String.Empty;
+
+            lblMessage.Text = String.Empty;
         }
 
         protected void BtnReset_Click(object sender, EventArgs e)
