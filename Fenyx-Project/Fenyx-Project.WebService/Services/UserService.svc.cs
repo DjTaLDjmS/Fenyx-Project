@@ -2,9 +2,11 @@
 using Fenyx_Project.WebService.Contracts;
 using Fenyx_Project.WebService.Dao.Impl;
 using Fenyx_Project.WebService.Models;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
@@ -12,12 +14,14 @@ using System.Threading.Tasks;
 
 namespace Fenyx_Project.WebService.Services
 {
-    // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom de classe "UserService" à la fois dans le code, le fichier svc et le fichier de configuration.
-    // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez UserService.svc ou UserService.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class UserService : IUserService
     {
+        private static readonly ILog log = log4net.LogManager
+            .GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        
         public async Task<List<UserListItemContract>> FindAllUsers()
         {
+            log.Info("Appel de la methode FindAllUsers() du service Fenyx-Project.WebService");
             var usersFromDb =  await new UserDaoImpl().GetAll();
 
             List<UserListItemContract> userListItemContract = MapperConfig
@@ -28,6 +32,8 @@ namespace Fenyx_Project.WebService.Services
 
         public async Task<UserContract> FindUser(Guid id)
         {
+            log.Info("Appel de la methode FindUser() du service Fenyx-Project.WebService");
+
             var usersFromDb = await new UserDaoImpl().Get(id);
 
             UserContract userContract = MapperConfig
@@ -38,6 +44,8 @@ namespace Fenyx_Project.WebService.Services
 
         public async Task<UserContract> AddUser(UserContract p)
         {
+            log.Info("Appel de la methode AddUser() du service Fenyx-Project.WebService");
+
             User userSaved = MapperConfig
                 .ModelMapper.Map<UserContract, User>(p);
 
@@ -47,6 +55,8 @@ namespace Fenyx_Project.WebService.Services
 
         public async Task<UserContract> UpdateUser(UserContract p)
         {
+            log.Info("Appel de la methode UpdateUser() du service Fenyx-Project.WebService");
+
             User userSaved = MapperConfig
               .ModelMapper.Map<UserContract, User>(p);
 
@@ -56,6 +66,8 @@ namespace Fenyx_Project.WebService.Services
 
         public async Task DeleteUser(Guid id)
         {
+            log.Info("Appel de la methode DeleteUser() du service Fenyx-Project.WebService");
+
             await new UserDaoImpl().Delete(id);
         }
     }
