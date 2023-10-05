@@ -1,4 +1,5 @@
-﻿using Fenyx_Project.WebService.Contracts;
+﻿using AppForm.WebServices.Utils;
+using Fenyx_Project.WebService.Contracts;
 using Fenyx_Project.WebService.Dao.Impl;
 using Fenyx_Project.WebService.Models;
 using System;
@@ -16,59 +17,28 @@ namespace Fenyx_Project.WebService.Services
     {
         public List<UserListItemContract> FindAllUsers()
         {
-            List<UserListItemContract> userListItemContract = null;
             var usersFromDb = new UserDaoImpl().GetAll();
 
-            userListItemContract = new List<UserListItemContract>(
-                usersFromDb.Select(user =>
-                new UserListItemContract
-                {
-                    Id = user.Id,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Birthdate = user.Birthdate,
-                    PhotoUrl = user.PhotoUrl
-                })
-            );
+            List<UserListItemContract> userListItemContract = MapperConfig
+                .ModelMapper.Map<List<UserListItemContract>>(usersFromDb);
 
             return userListItemContract;
         }
 
         public UserContract FindUser(Guid id)
         {
-            UserContract userContract = null;
             var usersFromDb = new UserDaoImpl().Get(id);
 
-            userContract = new UserContract
-            {
-                Id = usersFromDb.Id,
-                FirstName = usersFromDb.FirstName,
-                LastName = usersFromDb.LastName,
-                Birthdate = usersFromDb.Birthdate,
-                PhotoUrl = usersFromDb.PhotoUrl,
-                AddressStreet = usersFromDb.Address.Street,
-                AddressZipcode = usersFromDb.Address.Zipcode,
-                AddressCity = usersFromDb.Address.City
-            };
-
+            UserContract userContract = MapperConfig
+                .ModelMapper.Map<UserContract>(usersFromDb);
+            
             return userContract;
         }
 
         public UserContract AddUser(UserContract p)
         {
-            User userSaved = new User
-            {
-                FirstName = p.FirstName,
-                LastName = p.LastName,
-                Birthdate = p.Birthdate,
-                PhotoUrl = p.PhotoUrl,
-                Address = new Address()
-                {
-                    Street = p.AddressStreet,
-                    Zipcode = p.AddressZipcode,
-                    City = p.AddressCity
-                }
-            };
+            User userSaved = MapperConfig
+                .ModelMapper.Map<User>(p);
 
             new UserDaoImpl().Create(userSaved);
             return p;
@@ -76,20 +46,8 @@ namespace Fenyx_Project.WebService.Services
 
         public UserContract UpdateUser(UserContract p)
         {
-            User userSaved = new User
-            {
-                Id = p.Id,
-                FirstName = p.FirstName,
-                LastName = p.LastName,
-                Birthdate = p.Birthdate,
-                PhotoUrl = p.PhotoUrl,
-                Address = new Address()
-                {
-                    Street = p.AddressStreet,
-                    Zipcode = p.AddressZipcode,
-                    City = p.AddressCity
-                }
-            };
+            User userSaved = MapperConfig
+              .ModelMapper.Map<User>(p);
 
             new UserDaoImpl().Update(userSaved);
             return p;
