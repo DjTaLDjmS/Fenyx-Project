@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Fenyx_Project.WebService.Services
 {
@@ -13,18 +14,18 @@ namespace Fenyx_Project.WebService.Services
     public interface IUserService
     {
         [OperationContract]
-        List<UserListItemContract> FindAllUsers();
+        Task<List<UserListItemContract>> FindAllUsers();
 
         [OperationContract]
-        UserContract FindUser(Guid id);
+        Task<UserContract> FindUser(Guid id);
 
         [OperationContract]
-        UserContract AddUser(UserContract p);
+        Task<UserContract> AddUser(UserContract p);
 
         [OperationContract]
-        UserContract UpdateUser(UserContract p);
+        Task<UserContract> UpdateUser(UserContract p);
 
         [OperationContract]
-        void DeleteUser(Guid id);
+        Task DeleteUser(Guid id);
     }
 }

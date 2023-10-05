@@ -8,14 +8,14 @@ namespace Fenyx_Project.WebService.Dao
 {
     public interface IDao<TEntity> where TEntity : class, new()
     {
-        List<TEntity> GetAll();
-        
-        TEntity Get(Guid id);
+        Task<List<TEntity>> GetAll();
 
-        TEntity Create(TEntity entity);
+        Task<TEntity> Get(Guid id);
 
-        TEntity Update(TEntity entity);
+        Task<TEntity> Create(TEntity entity);
 
-        void Delete(Guid id);
+        Task<TEntity> Update(TEntity entity);
+
+        Task Delete(Guid id);
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace Fenyx_Project.WebService.Dao.Impl
@@ -17,33 +18,33 @@ namespace Fenyx_Project.WebService.Dao.Impl
             _dbContext = new ModelDbContext();
         }
         
-        public List<User> GetAll()
+        public async Task<List<User>> GetAll()
         {
-            return _dbContext.Users.ToList();
+            return await _dbContext.Users.ToListAsync();
         }
 
-        public User Get(Guid id)
+        public async Task<User> Get(Guid id)
         {
-            return _dbContext.Users.Include(u => u.Address).FirstOrDefault(u => u.Id == id);
+            return await _dbContext.Users.Include(u => u.Address).FirstOrDefaultAsync(u => u.Id == id);
         }
 
-        public User Create(User entity)
+        public async Task<User> Create(User entity)
         {
             _dbContext.Users.Add(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
             return entity;
         }
 
-        public User Update(User entity)
+        public async Task<User> Update(User entity)
         {
             _dbContext.Users.AddOrUpdate(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
             return entity;
         }
 
-        public void Delete(Guid id)
+        public async Task Delete(Guid id)
         {
-            User entity = Get(id);
+            User entity = await Get(id);
             _dbContext.Users.Remove(entity);
             _dbContext.SaveChanges();
         }

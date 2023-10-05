@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Fenyx_Project.WebService.Services
 {
@@ -15,9 +16,9 @@ namespace Fenyx_Project.WebService.Services
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez UserService.svc ou UserService.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class UserService : IUserService
     {
-        public List<UserListItemContract> FindAllUsers()
+        public async Task<List<UserListItemContract>> FindAllUsers()
         {
-            var usersFromDb = new UserDaoImpl().GetAll();
+            var usersFromDb =  await new UserDaoImpl().GetAll();
 
             List<UserListItemContract> userListItemContract = MapperConfig
                 .ModelMapper.Map<List<User> ,List <UserListItemContract>>(usersFromDb);
@@ -25,9 +26,9 @@ namespace Fenyx_Project.WebService.Services
             return userListItemContract;
         }
 
-        public UserContract FindUser(Guid id)
+        public async Task<UserContract> FindUser(Guid id)
         {
-            var usersFromDb = new UserDaoImpl().Get(id);
+            var usersFromDb = await new UserDaoImpl().Get(id);
 
             UserContract userContract = MapperConfig
                 .ModelMapper.Map<User, UserContract>(usersFromDb);
@@ -35,27 +36,27 @@ namespace Fenyx_Project.WebService.Services
             return userContract;
         }
 
-        public UserContract AddUser(UserContract p)
+        public async Task<UserContract> AddUser(UserContract p)
         {
             User userSaved = MapperConfig
                 .ModelMapper.Map<UserContract, User>(p);
 
-            new UserDaoImpl().Create(userSaved);
+            await new UserDaoImpl().Create(userSaved);
             return p;
         }
 
-        public UserContract UpdateUser(UserContract p)
+        public async Task<UserContract> UpdateUser(UserContract p)
         {
             User userSaved = MapperConfig
               .ModelMapper.Map<UserContract, User>(p);
 
-            new UserDaoImpl().Update(userSaved);
+            await new UserDaoImpl().Update(userSaved);
             return p;
         }
 
-        public void DeleteUser(Guid id)
+        public async Task DeleteUser(Guid id)
         {
-            new UserDaoImpl().Delete(id);
+            await new UserDaoImpl().Delete(id);
         }
     }
 }
