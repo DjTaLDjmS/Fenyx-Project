@@ -1,6 +1,7 @@
 ﻿using Fenyx_Project.WebForms.UserServiceReference;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -40,10 +41,11 @@ namespace Fenyx_Project.WebForms.Pages
                     txtFirstName.Text = user.FirstName;
                     txtLastName.Text = user.LastName;
                     txtBirthdate.Text = user.Birthdate.ToString("dd/MM/yyyy");
-                    txtPhoto.Text = user.PhotoUrl;
                     txtStreet.Text = user.AddressStreet;
                     txtZipcode.Text = user.AddressZipcode.ToString();
                     txtCity.Text = user.AddressCity;
+
+                    imPhoto.ImageUrl = $"~/images/{user.PhotoUrl}";
                 }
 
                 lblMessage.Text = "Données chargées";
@@ -56,10 +58,16 @@ namespace Fenyx_Project.WebForms.Pages
             user.FirstName = txtFirstName.Text;
             user.LastName = txtLastName.Text;
             user.Birthdate = DateTime.Parse(txtBirthdate.Text);
-            user.PhotoUrl = txtPhoto.Text;
             user.AddressStreet = txtStreet.Text;
             user.AddressZipcode = int.Parse(txtZipcode.Text);
             user.AddressCity = txtCity.Text;
+
+            if (fuPhoto.HasFile)
+            {
+                string fileName = $"{DateTime.Now.ToString("yyyyMMdd_HHmmss")}_{fuPhoto.FileName}";
+                fuPhoto.SaveAs(Server.MapPath($@"~\images\{fileName}"));
+                user.PhotoUrl = fileName;
+            }
 
             var client = new UserServiceReference.UserServiceClient();
             var userReturn = client.AddUser(user);
@@ -80,10 +88,17 @@ namespace Fenyx_Project.WebForms.Pages
                 user.FirstName = txtFirstName.Text;
                 user.LastName = txtLastName.Text;
                 user.Birthdate = DateTime.Parse(txtBirthdate.Text);
-                user.PhotoUrl = txtPhoto.Text;
                 user.AddressStreet = txtStreet.Text;
                 user.AddressZipcode = int.Parse(txtZipcode.Text);
                 user.AddressCity = txtCity.Text;
+
+                if (fuPhoto.HasFile)
+                {
+                    string fileName = $"{DateTime.Now.ToString("yyyyMMdd_HHmmss")}_{fuPhoto.FileName}";
+                    fuPhoto.SaveAs(Server.MapPath($@"~\images\{fileName}"));
+                    user.PhotoUrl = fileName;
+
+                }
 
                 var client = new UserServiceReference.UserServiceClient();
                 var userReturn = client.UpdateUser(user);
@@ -117,10 +132,11 @@ namespace Fenyx_Project.WebForms.Pages
             txtFirstName.Text = String.Empty;
             txtLastName.Text = String.Empty;
             txtBirthdate.Text = String.Empty;
-            txtPhoto.Text = String.Empty;
             txtStreet.Text = String.Empty;
             txtZipcode.Text = String.Empty;
             txtCity.Text = String.Empty;
+
+            imPhoto.ImageUrl = null;
 
             lblMessage.Text = String.Empty;
         }

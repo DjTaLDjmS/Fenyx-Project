@@ -96,24 +96,6 @@ namespace Fenyx_Project.WebForms.Pages
         protected global::System.Web.UI.WebControls.CompareValidator cvDate;
 
         /// <summary>
-        /// Contrôle txtPhoto.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoto;
-
-        /// <summary>
-        /// Contrôle RequiredFieldValidatorPhoto.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPhoto;
-
-        /// <summary>
         /// Contrôle txtStreet.
         /// </summary>
         /// <remarks>
@@ -175,6 +157,33 @@ namespace Fenyx_Project.WebForms.Pages
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCity;
+
+        /// <summary>
+        /// Contrôle fuPhoto.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuPhoto;
+
+        /// <summary>
+        /// Contrôle imPhoto.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imPhoto;
+
+        /// <summary>
+        /// Contrôle RequiredFieldValidatorPhoto.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPhoto;
 
         /// <summary>
         /// Contrôle BtnReset.

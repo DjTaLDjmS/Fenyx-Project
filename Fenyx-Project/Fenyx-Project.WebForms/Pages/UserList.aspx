@@ -10,6 +10,10 @@
         <div class="row">
             <div class="col-md-6">
                 <asp:UpdatePanel ID="UpdatePanelForm" runat="server" UpdateMode="Conditional">
+                    <Triggers>
+                        <asp:PostBackTrigger ControlID="BtnAddUser" />
+                        <asp:PostBackTrigger ControlID="BtnUpdateUser" />
+                    </Triggers>
                     <ContentTemplate>
                         <asp:Label ID="lblMessage" runat="server" EnableViewState="false" ForeColor="blue"></asp:Label>
                         <table>
@@ -49,16 +53,6 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>Url Photo</th>
-                                <td>
-                                    <asp:TextBox ID="txtPhoto" runat="server" />
-                                </td>
-                                <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorPhoto" runat="server"
-                                        ControlToValidate="txtPhoto" Text="* Requis" />
-                                </td>
-                            </tr>
-                            <tr>
                                 <th>Adresse</th>
                                 <td>
                                     <asp:TextBox ID="txtStreet" runat="server" />
@@ -90,6 +84,17 @@
                                 <td>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorCity" runat="server"
                                         ControlToValidate="txtCity" Text="* Requis" />
+                                </td>
+                            </tr>
+                             <tr>
+                                <th>Url Photo</th>
+                                <td>
+                                    <asp:FileUpload ID="fuPhoto" runat="server" />
+                                    <asp:Image ID="imPhoto" runat="server" Height="100" Width="100" />
+                                </td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorPhoto" runat="server"
+                                        ControlToValidate="fuPhoto" Text="* Requis" />
                                 </td>
                             </tr>
                             <tr>
@@ -138,10 +143,10 @@
                             HeaderText="Prénom" SortExpression="FirstName" />
                         <asp:BoundField DataField="LastName"
                             HeaderText="Nom" SortExpression="LastName" />
-                        <asp:BoundField DataField="Birthdate"
+                        <asp:BoundField DataField="Birthdate" DataFormatString="{0:dd/MM/yyyy}"
                             HeaderText="Date de naissance" SortExpression="Birthdate" />
-                        <asp:BoundField DataField="PhotoUrl"
-                            HeaderText="Photo" SortExpression="PhotoUrl" />
+                        <asp:ImageField DataImageUrlField="PhotoUrl" DataImageUrlFormatString="../images/{0}" 
+                            HeaderText="Photo" ControlStyle-Height="50" ControlStyle-Width="50" />
                     </Columns>
                 </asp:GridView>
             </div>
