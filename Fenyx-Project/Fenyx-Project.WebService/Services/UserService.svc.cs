@@ -20,7 +20,7 @@ namespace Fenyx_Project.WebService.Services
             var usersFromDb = new UserDaoImpl().GetAll();
 
             List<UserListItemContract> userListItemContract = MapperConfig
-                .ModelMapper.Map<List<UserListItemContract>>(usersFromDb);
+                .ModelMapper.Map<List<User> ,List <UserListItemContract>>(usersFromDb);
 
             return userListItemContract;
         }
@@ -30,7 +30,7 @@ namespace Fenyx_Project.WebService.Services
             var usersFromDb = new UserDaoImpl().Get(id);
 
             UserContract userContract = MapperConfig
-                .ModelMapper.Map<UserContract>(usersFromDb);
+                .ModelMapper.Map<User, UserContract>(usersFromDb);
             
             return userContract;
         }
@@ -38,7 +38,7 @@ namespace Fenyx_Project.WebService.Services
         public UserContract AddUser(UserContract p)
         {
             User userSaved = MapperConfig
-                .ModelMapper.Map<User>(p);
+                .ModelMapper.Map<UserContract, User>(p);
 
             new UserDaoImpl().Create(userSaved);
             return p;
@@ -47,7 +47,7 @@ namespace Fenyx_Project.WebService.Services
         public UserContract UpdateUser(UserContract p)
         {
             User userSaved = MapperConfig
-              .ModelMapper.Map<User>(p);
+              .ModelMapper.Map<UserContract, User>(p);
 
             new UserDaoImpl().Update(userSaved);
             return p;

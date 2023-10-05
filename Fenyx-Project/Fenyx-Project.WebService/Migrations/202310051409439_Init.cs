@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddUserAddress : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {
@@ -11,7 +11,7 @@
                 "dbo.Address",
                 c => new
                     {
-                        Id = c.Guid(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Street = c.String(),
                         Zipcode = c.Int(nullable: false),
                         City = c.String(),

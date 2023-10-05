@@ -12,8 +12,18 @@ namespace AppForm.WebServices.Utils
     {
         protected override void Configure()
         {
-            CreateMap<UserContract, User>();
-            CreateMap<User, UserContract>();
+            CreateMap<UserContract, User>()
+                .ForMember(dest => dest.Address, act => act.MapFrom(src => new Address() {
+                    Id = src.Id,
+                    Street = src.AddressStreet,
+                    Zipcode = src.AddressZipcode,
+                    City = src.AddressCity
+                }));
+            CreateMap<User, UserContract>()
+                .ForMember(dest => dest.Id, act => act.MapFrom(src => src.Id))
+                .ForMember(dest => dest.AddressStreet, act => act.MapFrom(src => src.Address.Street))
+                .ForMember(dest => dest.AddressZipcode, act => act.MapFrom(src => src.Address.Zipcode))
+                .ForMember(dest => dest.AddressCity, act => act.MapFrom(src => src.Address.City)); ;
 
             CreateMap<UserListItemContract, User>();
             CreateMap<User, UserListItemContract>();

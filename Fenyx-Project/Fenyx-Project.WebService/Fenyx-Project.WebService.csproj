@@ -82,17 +82,9 @@
     <Compile Include="Contracts\UserContract.cs" />
     <Compile Include="Dao\IDao.cs" />
     <Compile Include="Dao\Impl\UserDaoImpl.cs" />
-    <Compile Include="Migrations\202310041023140_Init.cs" />
-    <Compile Include="Migrations\202310041023140_Init.designer.cs">
-      <DependentUpon>202310041023140_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310041043155_AddUserAddress.cs" />
-    <Compile Include="Migrations\202310041043155_AddUserAddress.designer.cs">
-      <DependentUpon>202310041043155_AddUserAddress.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310041229526_AlterAddress.cs" />
-    <Compile Include="Migrations\202310041229526_AlterAddress.designer.cs">
-      <DependentUpon>202310041229526_AlterAddress.cs</DependentUpon>
+    <Compile Include="Migrations\202310051409439_Init.cs" />
+    <Compile Include="Migrations\202310051409439_Init.designer.cs">
+      <DependentUpon>202310051409439_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -119,14 +111,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310041023140_Init.resx">
-      <DependentUpon>202310041023140_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310041043155_AddUserAddress.resx">
-      <DependentUpon>202310041043155_AddUserAddress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310041229526_AlterAddress.resx">
-      <DependentUpon>202310041229526_AlterAddress.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310051409439_Init.resx">
+      <DependentUpon>202310051409439_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
