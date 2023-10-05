@@ -92,7 +92,7 @@
                     <tr>
                         <td>
                             <asp:Button ID="BtnReset" Text="Effacer"
-                                OnClick="BtnReset_Click" runat="server" />
+                                OnClick="BtnReset_Click" runat="server" EnableClientScript="false" />
 
                         </td>
                     </tr>
