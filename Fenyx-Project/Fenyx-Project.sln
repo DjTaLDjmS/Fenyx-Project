@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenyx-Project.WebForms", "Fenyx-Project.WebForms\Fenyx-Project.WebForms.csproj", "{9BABED29-90D3-46DE-B008-A6C51224FADA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{00A4FE5F-6813-4AA5-8379-3C2E306A3C8E} = {00A4FE5F-6813-4AA5-8379-3C2E306A3C8E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenyx-Project.WebService", "Fenyx-Project.WebService\Fenyx-Project.WebService.csproj", "{00A4FE5F-6813-4AA5-8379-3C2E306A3C8E}"
 EndProject
