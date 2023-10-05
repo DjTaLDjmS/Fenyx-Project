@@ -92,7 +92,7 @@
                     <tr>
                         <td>
                             <asp:Button ID="BtnReset" Text="Effacer"
-                                OnClick="BtnReset_Click" runat="server" EnableClientScript="false" />
+                                OnClick="BtnReset_Click" runat="server" CausesValidation="False" />
 
                         </td>
                     </tr>
@@ -112,7 +112,7 @@
                     <tr>
                         <td>
                             <asp:Button ID="BtnDeleteUser" Text="Supprimer"
-                                OnClick="BtnDeleteUser_Click" runat="server" />
+                                OnClick="BtnDeleteUser_Click" runat="server" CausesValidation="False" />
 
                         </td>
                     </tr>
