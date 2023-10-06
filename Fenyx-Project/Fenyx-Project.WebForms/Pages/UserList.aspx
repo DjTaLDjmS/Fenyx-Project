@@ -17,6 +17,8 @@
                     <Triggers>
                         <asp:PostBackTrigger ControlID="BtnAddUser" />
                         <asp:PostBackTrigger ControlID="BtnUpdateUser" />
+                        <asp:PostBackTrigger ControlID="BtnDeleteUser" />
+                        <asp:PostBackTrigger ControlID="BtnReset" />
                     </Triggers>
                     <ContentTemplate>
                         <asp:Label ID="lblMessage" runat="server" EnableViewState="false" ForeColor="blue"></asp:Label>
