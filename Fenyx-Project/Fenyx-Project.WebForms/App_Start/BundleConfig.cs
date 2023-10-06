@@ -33,6 +33,13 @@ namespace Fenyx_Project.WebForms
             // prêt pour la production, utilisez l'outil de génération à l'adresse https://modernizr.com pour sélectionner uniquement les tests dont vous avez besoin
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
+
+            ScriptManager.ScriptResourceMapping.AddDefinition("bootstrap", new ScriptResourceDefinition
+            {
+                Path = "~/Scripts/bootstrap.min.js",
+                DebugPath = "~/Scripts/bootstrap.js",
+                LoadSuccessExpression = "bootstrap"
+            });
         }
     }
 }

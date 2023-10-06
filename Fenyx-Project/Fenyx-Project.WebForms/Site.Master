@@ -17,7 +17,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body>
+<body style="padding-top: 0px">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -39,19 +39,19 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+        <div class="navbar navbar-expand-lg bg-light navbar-fixed-top">
+            <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+ <%--                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/Pages/UserList">Application Gestion</a>
+                    </button>--%>
+                    <a class="navbar-brand" runat="server" href="~/Pages/UserList">Application de Gestion</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Pages/UserList">Gestion des utilisateurs</a></li>
+                        <li><a runat="server" href="~/Pages/UserList" class="btn">Gestion des utilisateurs</a></li>
                     </ul>
                 </div>
             </div>

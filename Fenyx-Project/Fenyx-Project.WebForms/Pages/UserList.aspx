@@ -4,6 +4,7 @@
     Inherits="Fenyx_Project.WebForms.Pages.UserList" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <br />
     <h2><%: Title %></h2>
     <hr />
     <div class="container">
@@ -39,7 +40,7 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label" for="txtBirthdate">Date de naissance</label>
-                                <asp:TextBox ID="txtBirthdate" class="form-control" runat="server" />
+                                <asp:TextBox ID="txtBirthdate" class="form-control datepicker" runat="server" />
                             </div>
                             <div class="col-md-6">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorBirthdate" runat="server"
@@ -85,6 +86,7 @@
                             <div class="col-md-6">
                                 <label class="form-label" for="fuPhoto">Photo</label>
                                 <asp:FileUpload ID="fuPhoto" class="form-control" runat="server" />
+                                <br />
                                 <asp:Image ID="imPhoto" class="form-control" runat="server" Height="100" Width="100" />
                                 <asp:HiddenField ID="hfPhoto" runat="server" />
                             </div>
@@ -124,7 +126,7 @@
                     AutoGenerateColumns="false" DataKeyNames="Id"
                     OnSelectedIndexChanged="GridViewUsers_SelectedIndexChanged"
                     AutoGenerateSelectButton="true" UseAccessibleHeader="true"
-                    CssClass="table table-striped table-bordered table-condensed">
+                    CssClass="datatables table table-striped table-bordered table-condensed">
                     <Columns>
                         <asp:BoundField DataField="FirstName"
                             HeaderText="Prénom" SortExpression="FirstName" />
@@ -139,4 +141,10 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function () {
+            //$(".datepicker").datepicker();
+            //let table = new DataTable(".datatables");
+        });
+    </script>
 </asp:Content>
