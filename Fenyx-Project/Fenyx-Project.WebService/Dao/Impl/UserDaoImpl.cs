@@ -37,6 +37,7 @@ namespace Fenyx_Project.WebService.Dao.Impl
 
         public async Task<User> Update(User entity)
         {
+            _dbContext.Address.AddOrUpdate(entity.Address);
             _dbContext.Users.AddOrUpdate(entity);
             await _dbContext.SaveChangesAsync();
             return entity;
