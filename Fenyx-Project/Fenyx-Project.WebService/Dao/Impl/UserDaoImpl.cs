@@ -46,6 +46,7 @@ namespace Fenyx_Project.WebService.Dao.Impl
         public async Task Delete(Guid id)
         {
             User entity = await Get(id);
+            _dbContext.Address.Remove(entity.Address);
             _dbContext.Users.Remove(entity);
             _dbContext.SaveChanges();
         }
