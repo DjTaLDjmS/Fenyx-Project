@@ -91,10 +91,7 @@
                                 <td>
                                     <asp:FileUpload ID="fuPhoto" runat="server" />
                                     <asp:Image ID="imPhoto" runat="server" Height="100" Width="100" />
-                                </td>
-                                <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorPhoto" runat="server"
-                                        ControlToValidate="fuPhoto" Text="* Requis" />
+                                    <asp:HiddenField ID="hfPhoto" runat="server" />
                                 </td>
                             </tr>
                             <tr>

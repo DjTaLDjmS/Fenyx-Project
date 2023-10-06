@@ -177,13 +177,13 @@ namespace Fenyx_Project.WebForms.Pages
         protected global::System.Web.UI.WebControls.Image imPhoto;
 
         /// <summary>
-        /// Contrôle RequiredFieldValidatorPhoto.
+        /// Contrôle hfPhoto.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPhoto;
+        protected global::System.Web.UI.WebControls.HiddenField hfPhoto;
 
         /// <summary>
         /// Contrôle BtnReset.

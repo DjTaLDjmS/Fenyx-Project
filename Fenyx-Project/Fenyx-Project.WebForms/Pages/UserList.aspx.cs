@@ -46,6 +46,7 @@ namespace Fenyx_Project.WebForms.Pages
                     txtCity.Text = user.AddressCity;
 
                     imPhoto.ImageUrl = $"~/images/{user.PhotoUrl}";
+                    hfPhoto.Value = user.PhotoUrl;
                 }
 
                 lblMessage.Text = "Données chargées";
@@ -67,6 +68,10 @@ namespace Fenyx_Project.WebForms.Pages
                 string fileName = $"{DateTime.Now.ToString("yyyyMMdd_HHmmss")}_{fuPhoto.FileName}";
                 fuPhoto.SaveAs(Server.MapPath($@"~\images\{fileName}"));
                 user.PhotoUrl = fileName;
+            }
+            else if (hfPhoto.Value != null)
+            {
+                user.PhotoUrl = hfPhoto.Value;
             }
 
             var client = new UserServiceReference.UserServiceClient();
@@ -97,7 +102,10 @@ namespace Fenyx_Project.WebForms.Pages
                     string fileName = $"{DateTime.Now.ToString("yyyyMMdd_HHmmss")}_{fuPhoto.FileName}";
                     fuPhoto.SaveAs(Server.MapPath($@"~\images\{fileName}"));
                     user.PhotoUrl = fileName;
-
+                }
+                else if (hfPhoto.Value != null)
+                {
+                    user.PhotoUrl = hfPhoto.Value;
                 }
 
                 var client = new UserServiceReference.UserServiceClient();
