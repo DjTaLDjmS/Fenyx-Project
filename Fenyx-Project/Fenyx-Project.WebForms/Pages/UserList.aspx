@@ -4,6 +4,9 @@
     Inherits="Fenyx_Project.WebForms.Pages.UserList" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" type="text/javascript"></script>
+    <link src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css" /> 
+    <link src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/theme.min.css" rel="stylesheet" type="text/css" /> 
     <br />
     <h2><%: Title %></h2>
     <hr />
@@ -143,7 +146,9 @@
     </div>
     <script>
         $(function () {
-            //$(".datepicker").datepicker();
+            //$(".datepicker").datepicker({
+            //    dateFormat: 'dd/mm/yy'
+            //});
             //let table = new DataTable(".datatables");
         });
     </script>
