@@ -7,13 +7,13 @@ namespace Fenyx_Project.WebService.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Init : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202310051409439_Init"; }
+            get { return "202310091929219_Initial"; }
         }
         
         string IMigrationMetadata.Source

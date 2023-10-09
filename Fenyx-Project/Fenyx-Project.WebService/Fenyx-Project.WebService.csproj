@@ -85,9 +85,9 @@
     <Compile Include="Contracts\UserContract.cs" />
     <Compile Include="Dao\IDao.cs" />
     <Compile Include="Dao\Impl\UserDaoImpl.cs" />
-    <Compile Include="Migrations\202310051409439_Init.cs" />
-    <Compile Include="Migrations\202310051409439_Init.designer.cs">
-      <DependentUpon>202310051409439_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202310091929219_Initial.cs" />
+    <Compile Include="Migrations\202310091929219_Initial.designer.cs">
+      <DependentUpon>202310091929219_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -115,8 +115,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310051409439_Init.resx">
-      <DependentUpon>202310051409439_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310091929219_Initial.resx">
+      <DependentUpon>202310091929219_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
