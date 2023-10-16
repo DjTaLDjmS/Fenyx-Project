@@ -3,6 +3,8 @@
     CodeBehind="UserList.aspx.cs"
     Inherits="Fenyx_Project.WebForms.Pages.UserList" %>
 
+<%@ Register Src="~/Pages/UserControl.ascx" TagPrefix="uc1" TagName="UserControl" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -12,6 +14,7 @@
     <script src="https://cdn.datatables.net/plug-ins/1.13.6/sorting/date-eu.js"></script>
     <br />
     <h2><%: Title %></h2>
+    <uc1:UserControl runat="server" id="UserControl" OnPageTitleUpdated="MyUserControl_PageTitleUpdated" />
     <hr />
     <div class="container">
         <div class="row g-3">

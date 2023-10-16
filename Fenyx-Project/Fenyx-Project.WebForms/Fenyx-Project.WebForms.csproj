@@ -239,6 +239,7 @@
     <None Include="Connected Services\UserServiceReference\UserService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Pages\UserControl.ascx" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -410,6 +411,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControl.ascx.cs">
+      <DependentUpon>UserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControl.ascx.designer.cs">
+      <DependentUpon>UserControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>

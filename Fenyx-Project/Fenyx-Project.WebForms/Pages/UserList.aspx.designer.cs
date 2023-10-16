@@ -15,6 +15,15 @@ namespace Fenyx_Project.WebForms.Pages
     {
 
         /// <summary>
+        /// Contrôle UserControl.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::Fenyx_Project.WebForms.Pages.UserControl UserControl;
+
+        /// <summary>
         /// Contrôle UpdatePanelForm.
         /// </summary>
         /// <remarks>

@@ -19,6 +19,11 @@ namespace Fenyx_Project.WebForms.Pages
             }
         }
 
+        protected void MyUserControl_PageTitleUpdated(object sender, EventArgs e)
+        {
+            this.Title = UserControl.PageTitle;
+        }
+
         protected override void OnPreRenderComplete(EventArgs e)
         {
             if (GridViewUsers.Rows.Count > 0)
