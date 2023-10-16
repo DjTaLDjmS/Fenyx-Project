@@ -126,9 +126,11 @@
                 <asp:GridView ID="GridViewUsers" runat="server" CellSpacing="3"
                     AutoGenerateColumns="false" DataKeyNames="Id"
                     OnSelectedIndexChanged="GridViewUsers_SelectedIndexChanged"
-                    AutoGenerateSelectButton="true" UseAccessibleHeader="true"
+                    UseAccessibleHeader="true"
                     CssClass="datatables table table-striped table-bordered table-condensed">
                     <Columns>
+                        <asp:ButtonField CommandName="Select" Text="Selectionner"
+                            HeaderText="Action" ItemStyle-Width="150" ItemStyle-CssClass="fa fa-check" />
                         <asp:BoundField DataField="FirstName"
                             HeaderText="Prénom" SortExpression="FirstName" />
                         <asp:BoundField DataField="LastName"
