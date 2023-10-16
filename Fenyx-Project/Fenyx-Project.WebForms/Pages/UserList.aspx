@@ -4,9 +4,9 @@
     Inherits="Fenyx_Project.WebForms.Pages.UserList" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" type="text/javascript"></script>
-    <link src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css" /> 
-    <link src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/theme.min.css" rel="stylesheet" type="text/css" /> 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
     <br />
     <h2><%: Title %></h2>
     <hr />
@@ -46,13 +46,6 @@
                             <div class="col-md-6">
                                 <label class="form-label" for="txtBirthdate">Date de naissance</label>
                                 <asp:TextBox ID="txtBirthdate" class="form-control datepicker" runat="server" />
-                            </div>
-                            <div class="col-md-6">
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorBirthdate" runat="server"
-                                    ControlToValidate="txtBirthdate" Text="* Requis" />
-                                <asp:CompareValidator runat="server" ID="cvDate"
-                                    ErrorMessage="Date requise" Operator="DataTypeCheck"
-                                    ControlToValidate="txtBirthdate" Type="Date" />
                             </div>
                         </div>
                         <div class="row g-3">
@@ -148,10 +141,7 @@
     </div>
     <script>
         $(function () {
-            //$(".datepicker").datepicker({
-            //    dateFormat: 'dd/mm/yy'
-            //});
-            //let table = new DataTable(".datatables");
+            $(".datepicker").datepicker();
         });
     </script>
 </asp:Content>
