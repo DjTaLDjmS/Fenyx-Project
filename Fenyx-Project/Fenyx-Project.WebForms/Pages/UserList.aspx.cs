@@ -19,6 +19,14 @@ namespace Fenyx_Project.WebForms.Pages
             }
         }
 
+        protected override void OnPreRenderComplete(EventArgs e)
+        {
+            if (GridViewUsers.Rows.Count > 0)
+            {
+                GridViewUsers.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
         private void PopulateList()
         {
             var client = new UserServiceReference.UserServiceClient();
