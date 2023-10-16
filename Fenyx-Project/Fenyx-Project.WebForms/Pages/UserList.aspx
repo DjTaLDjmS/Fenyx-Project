@@ -146,6 +146,9 @@
     </div>
     <script>
         $(function () {
+            //$(".datepicker").datepicker({
+            //    dateFormat: 'dd/mm/yy'
+            //});
             $('.datatables').dataTable({
                 columnDefs: [
                     { type: 'date-eu', targets: 3 }
